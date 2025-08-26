@@ -1,230 +1,209 @@
-/* App header title */
-.app-header-title {
-  color: #b785d6ff;
-  text-shadow: 0 2px 8px #fff8;
+body {
+  background: #3a2a5d;
+  min-height: 100vh;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
 }
 
-/* App main container */
 .app-main-container {
   max-width: 420px;
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
-/* App footer */
-.app-footer {
-  color: #7c4dff;
-  font-size: 14px;
-  text-shadow: 0 1px 4px #fff8;
-}
-/* AIThought card styles */
-.ai-thought-card {
-  background: rgba(28, 28, 54, 0.98);
-  box-shadow: 0 4px 24px 2px #000b, 0 1.5px 8px 1px #2a2a7299;
-  max-width: 300px;
-  color: #b39ddb;
-}
-
-.ai-thought-quote {
-  font-size: 16px;
-  color: #e0d7f7;
-}
-
-.ai-thought-btn {
-  background: linear-gradient(90deg, #2a2a72, #4b2067);
-  border: none;
-}
-/* Avatar preview image in PFPUpload */
-.profile-avatar-preview {
-  width: 120px;
-  border-radius: 50%;
-}
-/* Form Card Styles (EmailForm, PrivacyThoughtForm, PFPUpload, AIThought) */
-.profile-form-card {
-  background: rgba(28, 28, 54, 0.98);
-  box-shadow: 0 4px 24px 2px #000b, 0 1.5px 8px 1px #2a2a7299;
-  max-width: 300px;
-}
-.profile-form-title {
-  color: #b39ddb;
-}
-.profile-form-input {
-  background: #23234a !important;
-  color: #b39ddb !important;
-  border-color: #4b2067 !important;
-}
-.profile-form-btn-primary {
-  background: linear-gradient(90deg, #2a2a72, #4b2067) !important;
-  border: none !important;
-}
+.app-header-title,
+.app-main-container,
+.app-footer,
+.profile-form-card,
+.ai-thought-card,
+.ai-thought-btn,
+.profile-form-input,
+.profile-form-btn-primary,
 .profile-form-btn-primary:active,
-.profile-form-btn-primary:focus {
-  background: linear-gradient(90deg, #2a2a72, #4b2067) !important;
-  border: none !important;
+.profile-form-btn-primary:focus,
+.profile-btn-dark,
+.profile-btn-primary {
+  width: 70%;
+  max-width: 300px;
+  margin: auto;
+  border-radius: 15px;
+  background: linear-gradient(315deg, #342654, #3e2d64);
+  box-shadow: -30px -30px 52px #352756, 30px 30px 52px #3f2d64;
 }
-.profile-form-ai-blockquote {
-  font-size: 16px;
-  color: #e0d7f7;
+
+.text {
+  color: #7d54ec;
+  /* text-shadow: 13px 13px 34px #ba9ddb, -13px -13px 34px #f2cbff; */
+  border-radius: 1rem;
 }
-.profile-form-ai-title {
-  color: #b39ddb;
+
+.text::placeholder {
+  color: #7d54ec;
+  opacity: 1;
 }
-/* ProfileCard Styles */
-.profile-perspective {
+
+input,
+input:focus,
+input:active,
+textarea,
+textarea:focus,
+textarea:active {
+  color: #7c4dff !important;
+}
+
+.app-footer {
+  font-size: 14px;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+/* card styles */
+
+.aztec-card-outer {
   perspective: 1200px;
-  min-height: 420px;
+  width: 220px;
+  height: 330px;
+  margin: 2rem auto;
+  position: relative;
 }
-.profile-flip-card-inner {
+.aztec-card-inner {
   width: 100%;
   height: 100%;
+  position: relative;
+  transition: transform 0.8s cubic-bezier(0.4, 2, 0.6, 1);
+  transform-style: preserve-3d;
 }
-.profile-flip-card-size {
-  width: 240px;
-  height: 370px;
+.aztec-card-inner.flipped {
+  transform: rotateY(180deg);
 }
-.profile-flip-front,
-.profile-flip-back {
-  width: 100%;
-  height: 100%;
+.aztec-card-face {
   position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
-  border-radius: 24px;
-  min-height: 370px;
+  backface-visibility: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.profile-flip-front {
-  background: linear-gradient(135deg, #4b2067 0%, #2a2a72 60%, #1e2246 100%);
-  color: #e0d7f7;
-  box-shadow: 0 8px 32px 0 rgba(40, 40, 114, 0.35);
-  backface-visibility: hidden;
-  transition: box-shadow 0.3s;
+.aztec-card-front {
+  background: #1a1333;
+  box-shadow: 0 8px 40px 8px #000c, 0 1.5px 12px 2px #2a2a72cc;
+  color: #fff;
 }
-.profile-flip-back {
-  background: linear-gradient(135deg, #2a2a72 0%, #4b2067 100%);
-  color: #e0d7f7;
-  box-shadow: 0 8px 32px 0 rgba(30, 34, 70, 0.35);
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-}
-.profile-flip-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.7s cubic-bezier(0.4, 2, 0.6, 1);
-  transform-style: preserve-3d;
-}
-.profile-flip-inner.flipped {
-  transform: rotateY(180deg);
-}
-.profile-flip-front {
-  z-index: 2;
-}
-.profile-flip-back {
-  z-index: 3;
-}
-.profile-flip-card:hover .profile-flip-inner {
-  box-shadow: 0 12px 32px 0 #6a82fb55;
-}
-.profile-avatar-wrap {
-  position: relative;
-  margin-bottom: 12px;
-}
-.profile-avatar-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: #ede7f6;
-  object-fit: cover;
-  box-shadow: 0 2px 12px #6a82fb55;
-  transition: transform 0.3s;
-}
-.profile-avatar-badge {
-  position: absolute;
-  bottom: -8px;
-  right: -8px;
-}
-.profile-displayname {
+.aztec-card-back {
+  background: #1a1333;
   color: #b39ddb;
-  letter-spacing: 1px;
+  transform: rotateY(180deg);
+  box-shadow: 0 8px 40px 8px #000c, 0 1.5px 12px 2px #2a2a72cc;
 }
-.profile-email {
+.aztec-card-border {
+  border: 2.5px solid #b39ddb;
+  border-radius: 14px;
+  width: 92%;
+  height: 92%;
+  margin: auto;
+  padding: 1.2rem 0.5rem 0.7rem 0.5rem;
+  position: relative;
+  background: rgba(30, 20, 60, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.aztec-card-title {
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 1.1rem;
+  text-shadow: 0 0 12px #b39ddb, 0 2px 8px #fff8;
+}
+.aztec-card-logo-wrap {
+  margin-bottom: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.aztec-card-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  background: #b39ddb;
+  box-shadow: 0 0 16px #b39ddb88;
+  border: 2px solid #fff;
+}
+.aztec-card-quote {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 0.5rem;
+  margin-bottom: 0.7rem;
+  text-align: center;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  text-shadow: 0 0 8px #b39ddb, 0 1px 4px #fff8;
+}
+.aztec-card-corner-duck {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+.aztec-card-pfp-wrap {
+  margin-bottom: 0.2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.aztec-card-pfp {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #b39ddb;
+  object-fit: cover;
+  box-shadow: 0 2px 8px #b39ddb55;
+}
+.aztec-card-user {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+}
+.aztec-card-email {
+  font-size: 0.75rem;
   color: #b39ddb;
   word-break: break-all;
 }
-.profile-quote {
-  color: #e0d7f7;
-  font-size: 15px;
-  min-height: 32px;
-  text-shadow: 0 1px 8px #2a2a72;
-}
-.profile-ai-thought {
-  color: #b39ddb;
-  font-size: 14px;
-  min-height: 24px;
-  text-shadow: 0 1px 8px #1e2246;
-  border-left: 3px solid #b39ddb;
-  padding-left: 10px;
-}
-.profile-aztec-member {
+.aztec-card-user-quote {
   color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  background: linear-gradient(90deg, #4b2067 0%, #2a2a72 100%);
-  border-radius: 14px;
-  box-shadow: 0 2px 16px #1e2246cc;
-  padding: 10px 0 8px 0;
-  border: 2px solid #b39ddb;
-  text-shadow: 0 2px 8px #2a2a72, 0 1px 0 #b39ddb;
-  opacity: 0.97;
-  line-height: 1.3;
-  margin-bottom: 18px;
-}
-.profile-aztec-member .profile-aztec-name {
-  color: #b39ddb;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-.profile-aztec-member .profile-aztec-highlight {
-  color: #ffd700;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-style: italic;
   text-shadow: 0 0 8px #b39ddb;
-  font-size: 14px;
 }
-.profile-btn-dark {
-  color: #b39ddb !important;
-  background: #2a2a72 !important;
-  border-radius: 12px !important;
-  box-shadow: 0 2px 8px #1e2246 !important;
+.aztec-card-ai-quote {
+  color: #b39ddb;
+  font-size: 0.75rem;
+  font-style: italic;
+  margin: 0;
 }
-.profile-btn-primary {
-  background: linear-gradient(90deg, #2a2a72, #4b2067) !important;
-  border: none !important;
-  border-radius: 12px !important;
+.aztec-card-share-btn,
+.aztec-card-flip-btn {
+  background: #b39ddb;
+  color: #1a1333;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.7rem;
+  box-shadow: 0 2px 8px #b39ddb55;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 0;
 }
-body {
-  background: linear-gradient(
-    135deg,
-    #181828 0%,
-    #23234a 100%,
-    #0d0d1a 100%
-  ) !important;
-  min-height: 100vh;
-  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-}
-/* Extra thick shadow for the card to make it pop */
-.profile-flip-card {
-  box-shadow: 0 8px 40px 8px #000a, 0 1.5px 12px 2px #2a2a72cc;
-  border-radius: 24px;
-}
-
-/* Overlay badge for profile card */
-.profile-badge-overlay {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.aztec-card-share-btn:hover,
+.aztec-card-flip-btn:hover {
+  background: #fff;
+  color: #b39ddb;
 }

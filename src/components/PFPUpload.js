@@ -18,15 +18,21 @@ const PFPUpload = ({ onUpload }) => {
 
   return (
     <div className="card shadow p-4 m-auto rounded-4 border-0 profile-form-card">
-      <h2 className="mb-3 fw-bold text-center profile-form-title">
+      <h4 className="mb-3 fw-bold text-center profile-form-title text">
         Upload Your Profile Picture
-      </h2>
+      </h4>
       <input
         type="file"
         accept="image/*"
         ref={fileInput}
         onChange={handleFile}
         className="form-control mb-3 border-primary profile-form-input"
+        style={{
+          width: "100%",
+          border: "none",
+          outline: "none",
+          borderRadius: "12px",
+        }}
       />
       {preview && (
         <img

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import EmailForm from "./EmailForm";
 import PrivacyThoughtForm from "./PrivacyThoughtForm";
 import PFPUpload from "./PFPUpload";
-import ProfileCard from "./ProfileCard";
 import AIThought from "./AIThought";
+import AztecProfileCard from "./AztechCard";
 
 const quoteTemplates = [
   "Where privacy thrives, freedom follows.",
@@ -126,51 +126,49 @@ function App() {
 
   return (
     <div className="min-vh-100 d-flex flex-column align-items-center justify-content-center">
-      <h3 className="mb-4 fw-bold text-center p-3 app-header-title">
+      <h3 className="mb-4 fw-bold text-center p-3 app-header-title text">
         Privacy Tribe Card for the AZTECH Community
       </h3>
-      <div className="container app-main-container">
-        {step === 1 && (
-          <EmailForm
-            onSubmit={(email) => {
-              setEmail(email);
-              setStep(2);
-            }}
-          />
-        )}
-        {step === 2 && (
-          <PrivacyThoughtForm
-            onSubmit={(thought) => {
-              setThought(thought);
-              setQuote(randomizeQuote(thought));
-              setAIThought(generateAIThought(thought));
-              setStep(2.5);
-            }}
-          />
-        )}
-        {step === 2.5 && (
-          <AIThought aiThought={aiThought} onContinue={() => setStep(3)} />
-        )}
-        {step === 3 && (
-          <PFPUpload
-            onUpload={(img) => {
-              setPfp(img);
-              setStep(4);
-            }}
-          />
-        )}
-        {step === 4 && (
-          <ProfileCard
-            displayName={getDisplayName(email)}
-            quote={quote}
-            pfp={pfp}
-            onShare={handleShare}
-            email={email}
-            aiThought={aiThought}
-          />
-        )}
-      </div>
-      <footer className="mt-5 text-center app-footer">
+      {step === 1 && (
+        <EmailForm
+          onSubmit={(email) => {
+            setEmail(email);
+            setStep(2);
+          }}
+        />
+      )}
+      {step === 2 && (
+        <PrivacyThoughtForm
+          onSubmit={(thought) => {
+            setThought(thought);
+            setQuote(randomizeQuote(thought));
+            setAIThought(generateAIThought(thought));
+            setStep(2.5);
+          }}
+        />
+      )}
+      {step === 2.5 && (
+        <AIThought aiThought={aiThought} onContinue={() => setStep(3)} />
+      )}
+      {step === 3 && (
+        <PFPUpload
+          onUpload={(img) => {
+            setPfp(img);
+            setStep(4);
+          }}
+        />
+      )}
+      {step === 4 && (
+        <AztecProfileCard
+          displayName={getDisplayName(email)}
+          quote={quote}
+          pfp={pfp}
+          onShare={handleShare}
+          email={email}
+          aiThought={aiThought}
+        />
+      )}
+      <footer className="mt-5 text-center app-footer text">
         No data leaves your browser. 100% frontend privacy.
       </footer>
     </div>

@@ -10,20 +10,30 @@ const EmailForm = ({ onSubmit }) => {
       }}
       className="card shadow p-4 m-auto rounded-4 border-0 profile-form-card"
     >
-      <h4 className="mb-3 fw-bold text-center profile-form-title">
+      <h4 className="mb-3 fw-bold text-center profile-form-title text">
         Enter your email address
       </h4>
       <input
         type="email"
-        className="form-control mb-3 border-primary profile-form-input"
+        className="form-control mb-3 profile-form-input text"
         placeholder="Enter your email"
         value={email}
+        style={{
+          width: "100%",
+          border: "none",
+          outline: "none",
+          borderRadius: "12px",
+        }}
         onChange={(e) => setEmail(e.target.value)}
         required
       />
       <button
         type="submit"
-        className="btn btn-primary w-100 profile-form-btn-primary"
+        className="btn btn-primary w-100 profile-form-btn-primary text"
+        style={{
+          border: "none",
+          outline: "none",
+        }}
       >
         Continue
       </button>
