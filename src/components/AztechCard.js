@@ -27,7 +27,7 @@ const AztecProfileCard = ({
               AZTEC PRIVACY
               <PrivacyBadge
                 size={30}
-                style={{ marginLeft: 10, verticalAlign: "middle" }}
+                style={{ marginLeft: 8, verticalAlign: "middle" }}
               />
             </div>
             <div className="aztec-card-logo-wrap">
