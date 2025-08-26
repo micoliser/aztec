@@ -1,13 +1,230 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* App header title */
+.app-header-title {
+  color: #b785d6ff;
+  text-shadow: 0 2px 8px #fff8;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* App main container */
+.app-main-container {
+  max-width: 420px;
+}
+
+/* App footer */
+.app-footer {
+  color: #7c4dff;
+  font-size: 14px;
+  text-shadow: 0 1px 4px #fff8;
+}
+/* AIThought card styles */
+.ai-thought-card {
+  background: rgba(28, 28, 54, 0.98);
+  box-shadow: 0 4px 24px 2px #000b, 0 1.5px 8px 1px #2a2a7299;
+  max-width: 300px;
+  color: #b39ddb;
+}
+
+.ai-thought-quote {
+  font-size: 16px;
+  color: #e0d7f7;
+}
+
+.ai-thought-btn {
+  background: linear-gradient(90deg, #2a2a72, #4b2067);
+  border: none;
+}
+/* Avatar preview image in PFPUpload */
+.profile-avatar-preview {
+  width: 120px;
+  border-radius: 50%;
+}
+/* Form Card Styles (EmailForm, PrivacyThoughtForm, PFPUpload, AIThought) */
+.profile-form-card {
+  background: rgba(28, 28, 54, 0.98);
+  box-shadow: 0 4px 24px 2px #000b, 0 1.5px 8px 1px #2a2a7299;
+  max-width: 300px;
+}
+.profile-form-title {
+  color: #b39ddb;
+}
+.profile-form-input {
+  background: #23234a !important;
+  color: #b39ddb !important;
+  border-color: #4b2067 !important;
+}
+.profile-form-btn-primary {
+  background: linear-gradient(90deg, #2a2a72, #4b2067) !important;
+  border: none !important;
+}
+.profile-form-btn-primary:active,
+.profile-form-btn-primary:focus {
+  background: linear-gradient(90deg, #2a2a72, #4b2067) !important;
+  border: none !important;
+}
+.profile-form-ai-blockquote {
+  font-size: 16px;
+  color: #e0d7f7;
+}
+.profile-form-ai-title {
+  color: #b39ddb;
+}
+/* ProfileCard Styles */
+.profile-perspective {
+  perspective: 1200px;
+  min-height: 420px;
+}
+.profile-flip-card-inner {
+  width: 100%;
+  height: 100%;
+}
+.profile-flip-card-size {
+  width: 240px;
+  height: 370px;
+}
+.profile-flip-front,
+.profile-flip-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 24px;
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profile-flip-front {
+  background: linear-gradient(135deg, #4b2067 0%, #2a2a72 60%, #1e2246 100%);
+  color: #e0d7f7;
+  box-shadow: 0 8px 32px 0 rgba(40, 40, 114, 0.35);
+  backface-visibility: hidden;
+  transition: box-shadow 0.3s;
+}
+.profile-flip-back {
+  background: linear-gradient(135deg, #2a2a72 0%, #4b2067 100%);
+  color: #e0d7f7;
+  box-shadow: 0 8px 32px 0 rgba(30, 34, 70, 0.35);
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+.profile-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4, 2, 0.6, 1);
+  transform-style: preserve-3d;
+}
+.profile-flip-inner.flipped {
+  transform: rotateY(180deg);
+}
+.profile-flip-front {
+  z-index: 2;
+}
+.profile-flip-back {
+  z-index: 3;
+}
+.profile-flip-card:hover .profile-flip-inner {
+  box-shadow: 0 12px 32px 0 #6a82fb55;
+}
+.profile-avatar-wrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+.profile-avatar-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ede7f6;
+  object-fit: cover;
+  box-shadow: 0 2px 12px #6a82fb55;
+  transition: transform 0.3s;
+}
+.profile-avatar-badge {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+}
+.profile-displayname {
+  color: #b39ddb;
+  letter-spacing: 1px;
+}
+.profile-email {
+  color: #b39ddb;
+  word-break: break-all;
+}
+.profile-quote {
+  color: #e0d7f7;
+  font-size: 15px;
+  min-height: 32px;
+  text-shadow: 0 1px 8px #2a2a72;
+}
+.profile-ai-thought {
+  color: #b39ddb;
+  font-size: 14px;
+  min-height: 24px;
+  text-shadow: 0 1px 8px #1e2246;
+  border-left: 3px solid #b39ddb;
+  padding-left: 10px;
+}
+.profile-aztec-member {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #4b2067 0%, #2a2a72 100%);
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #1e2246cc;
+  padding: 10px 0 8px 0;
+  border: 2px solid #b39ddb;
+  text-shadow: 0 2px 8px #2a2a72, 0 1px 0 #b39ddb;
+  opacity: 0.97;
+  line-height: 1.3;
+  margin-bottom: 18px;
+}
+.profile-aztec-member .profile-aztec-name {
+  color: #b39ddb;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.profile-aztec-member .profile-aztec-highlight {
+  color: #ffd700;
+  font-weight: 600;
+  text-shadow: 0 0 8px #b39ddb;
+  font-size: 14px;
+}
+.profile-btn-dark {
+  color: #b39ddb !important;
+  background: #2a2a72 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px #1e2246 !important;
+}
+.profile-btn-primary {
+  background: linear-gradient(90deg, #2a2a72, #4b2067) !important;
+  border: none !important;
+  border-radius: 12px !important;
+}
+body {
+  background: linear-gradient(
+    135deg,
+    #181828 0%,
+    #23234a 100%,
+    #0d0d1a 100%
+  ) !important;
+  min-height: 100vh;
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+/* Extra thick shadow for the card to make it pop */
+.profile-flip-card {
+  box-shadow: 0 8px 40px 8px #000a, 0 1.5px 12px 2px #2a2a72cc;
+  border-radius: 24px;
+}
+
+/* Overlay badge for profile card */
+.profile-badge-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
