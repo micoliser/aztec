@@ -1,30 +1,30 @@
 import React, { useState } from "react";
 
-const EmailForm = ({ onSubmit }) => {
-  const [email, setEmail] = useState("");
+const UsernameForm = ({ onSubmit }) => {
+  const [username, setUsername] = useState("");
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        onSubmit(email);
+        onSubmit(username);
       }}
       className="card shadow p-4 m-auto rounded-4 border-0 profile-form-card"
     >
       <h4 className="mb-3 fw-bold text-center profile-form-title text">
-        Enter your email address
+        Enter your X username
       </h4>
       <input
-        type="email"
+        type="text"
         className="form-control mb-3 profile-form-input text"
-        placeholder="Enter your email"
-        value={email}
+        placeholder="Enter your username"
+        value={username}
         style={{
           width: "100%",
           border: "none",
           outline: "none",
           borderRadius: "12px",
         }}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={(e) => setUsername(e.target.value)}
         required
       />
       <button
@@ -41,4 +41,4 @@ const EmailForm = ({ onSubmit }) => {
   );
 };
 
-export default EmailForm;
+export default UsernameForm;

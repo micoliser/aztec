@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import EmailForm from "./EmailForm";
+import UsernameForm from "./EmailForm";
 import PrivacyThoughtForm from "./PrivacyThoughtForm";
 import PFPUpload from "./PFPUpload";
 import AIThought from "./AIThought";
@@ -95,15 +95,10 @@ function generateAIThought(userThought) {
   return aiThoughtTemplates[idx];
 }
 
-function getDisplayName(email) {
-  if (!email) return "";
-  return email.split("@")[0];
-}
-
 function App() {
   const [step, setStep] = useState(1);
-  const [email, setEmail] = useState("");
-  // eslint-disable-next-line
+  const [username, setUsername] = useState("");
+  //eslint-disable-next-line
   const [thought, setThought] = useState("");
   const [quote, setQuote] = useState("");
   const [aiThought, setAIThought] = useState("");
@@ -127,12 +122,12 @@ function App() {
   return (
     <div className="min-vh-100 d-flex flex-column align-items-center justify-content-center">
       <h3 className="mb-4 fw-bold text-center p-3 app-header-title text">
-        Privacy Tribe Card for the AZTECH Community
+        Privacy Tribe Card for the AZTEC Community
       </h3>
       {step === 1 && (
-        <EmailForm
-          onSubmit={(email) => {
-            setEmail(email);
+        <UsernameForm
+          onSubmit={(username) => {
+            setUsername(username);
             setStep(2);
           }}
         />
@@ -160,11 +155,11 @@ function App() {
       )}
       {step === 4 && (
         <AztecProfileCard
-          displayName={getDisplayName(email)}
+          displayName={username}
           quote={quote}
           pfp={pfp}
           onShare={handleShare}
-          email={email}
+          email={username ? `${username}@aztec.com` : ""}
           aiThought={aiThought}
         />
       )}

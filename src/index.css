@@ -1,7 +1,7 @@
 body {
   background: #3a2a5d;
   min-height: 100vh;
-  font-family: "Playfair Display", serif;
+  font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
 }
 
@@ -32,13 +32,13 @@ body {
 }
 
 .text {
-  color: #7d54ec;
+  color: #c8a2c8;
   /* text-shadow: 13px 13px 34px #ba9ddb, -13px -13px 34px #f2cbff; */
   border-radius: 1rem;
 }
 
 .text::placeholder {
-  color: #7d54ec;
+  color: #c8a2c8;
   opacity: 1;
 }
 
@@ -48,7 +48,7 @@ input:active,
 textarea,
 textarea:focus,
 textarea:active {
-  color: #7c4dff !important;
+  color: #c8a2c8 !important;
 }
 
 .app-footer {
@@ -154,7 +154,7 @@ textarea:active {
 }
 .aztec-card-pfp-wrap {
   margin-bottom: 0.2rem;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
 }
@@ -186,7 +186,7 @@ textarea:active {
   color: #b39ddb;
   font-size: 0.75rem;
   font-style: italic;
-  margin: 0;
+  margin: 5px 0;
 }
 .aztec-card-share-btn,
 .aztec-card-flip-btn {

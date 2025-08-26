@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import aztecLogo from "../aztec_logo.jpg"; // Use your logo path
+import aztecLogo from "../aztec_logo.jpg";
+import PrivacyBadge from "./PrivacyBadge";
 
 const AztecProfileCard = ({
   displayName,
   quote,
   pfp,
-  email,
+  username,
   aiThought,
   onShare,
 }) => {
@@ -22,7 +23,13 @@ const AztecProfileCard = ({
         {/* Front */}
         <div className="aztec-card-face aztec-card-front">
           <div className="aztec-card-border">
-            <div className="aztec-card-title">AZTEC PRIVACY</div>
+            <div className="aztec-card-title">
+              AZTEC PRIVACY
+              <PrivacyBadge
+                size={30}
+                style={{ marginLeft: 10, verticalAlign: "middle" }}
+              />
+            </div>
             <div className="aztec-card-logo-wrap">
               <img
                 src={aztecLogo}
@@ -47,11 +54,26 @@ const AztecProfileCard = ({
         {/* Back */}
         <div className="aztec-card-face aztec-card-back">
           <div className="aztec-card-border">
-            <div className="aztec-card-pfp-wrap">
+            <div
+              className="aztec-card-pfp-wrap"
+              style={{ position: "relative" }}
+            >
               <img src={pfp} alt="Profile" className="aztec-card-pfp" />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  transform: "translate(30%, 30%)",
+                }}
+              >
+                <PrivacyBadge size={35} />
+              </div>
             </div>
             <div className="aztec-card-user">{displayName}</div>
-            <div className="aztec-card-email">{email}</div>
+            <div className="aztec-card-email">
+              {displayName ? `${displayName}@aztec.com` : ""}
+            </div>
             <blockquote className="aztec-card-user-quote">
               &ldquo;{quote}&rdquo;
             </blockquote>
