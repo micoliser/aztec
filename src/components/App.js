@@ -164,7 +164,8 @@ function App() {
         />
       )}
       <footer className="mt-5 text-center app-footer text">
-        No data leaves your browser. 100% frontend privacy.
+        No data leaves your browser <br />
+        100% frontend privacy.
       </footer>
     </div>
   );
